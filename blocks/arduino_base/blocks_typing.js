@@ -99,6 +99,9 @@ Blockly.Blocks.inout_analog_read.getBlockType = function() {
 Blockly.Blocks.tone.getBlockType = function() {
 	return Blockly.Types.NUMBER;
 };
+Blockly.Blocks.tone_notime.getBlockType = function() {
+	return Blockly.Types.NUMBER;
+};
 Blockly.Blocks.notone.getBlockType = function() {
 	return Blockly.Types.NUMBER;
 };
@@ -132,6 +135,12 @@ Blockly.Blocks.serial_write_out.getBlockType = function() {
 Blockly.Blocks.serial_line.getBlockType = function() {
 	return Blockly.Types.TEXT;
 };
+Blockly.Blocks.serial_print.getBlockType = function() {
+	return Blockly.Types.NUMBER;
+};
+Blockly.Blocks.serial_readStringUntil.getBlockType = function() {
+	return Blockly.Types.TEXT;
+};
 
 //---------------------------------arduino_softserial.js-------------------------------------
 
@@ -146,6 +155,9 @@ Blockly.Blocks.soft_write.getBlockType = function() {
 };
 Blockly.Blocks.soft_available.getBlockType = function() {
 	return Blockly.Types.BOOLEAN;
+};
+Blockly.Blocks.soft_readStringUntil.getBlockType = function() {
+	return Blockly.Types.TEXT;
 };
 
 //---------------------------------storage.js-------------------------------------

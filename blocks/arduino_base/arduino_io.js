@@ -135,7 +135,8 @@ Blockly.Blocks.inout_digital_read_check = {
         this.appendValueInput("PIN", "Number")
 			.appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT);
         this.appendDummyInput()
-			.setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldCheckbox("FALSE"), "pullup")
+			.setAlign(Blockly.ALIGN_RIGHT)
+			.appendField(new Blockly.FieldCheckbox("FALSE"), "pullup")
 			.appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_PULL_UP);
         this.setInputsInline(false);
         this.setOutput(true, "Boolean");
@@ -281,6 +282,25 @@ Blockly.Blocks.tone = {
   }
 };
 
+Blockly.Blocks.tone_notime = {
+  init: function() {
+    this.setColour(Blockly.Blocks.arduino_io.HUE);
+    this.setHelpUrl(Blockly.Msg.ARDUINO_TONE_HELPURL);
+  this.appendValueInput("PIN")
+    .setCheck('Number')
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
+    this.appendValueInput("NUM")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.ARDUINO_TONE_INPUT2)
+        .setCheck('Number');
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.ARDUINO_TONE_TOOLTIP);
+  }
+};
+
 Blockly.Blocks.notone = {
   init: function() {
     this.setColour(Blockly.Blocks.arduino_io.HUE);
@@ -333,13 +353,13 @@ Blockly.Blocks.inout_onoff = {
 
 Blockly.Blocks.inout_angle = {
   init: function() {
-    this.setColour(Blockly.Blocks.arduino_io.HUE);
-	this.setHelpUrl('https://developers.google.com/blockly/custom-blocks/defining-blocks#appendfield');
     this.appendDummyInput("")
-        .appendField("angle")
+        .appendField(Blockly.Msg.ARDUINO_INOUT_ANGLE)
         .appendField(new Blockly.FieldAngle("90"), "ANGLE");
     this.setOutput(true, "Number");
-    this.setTooltip('angle °');
+    this.setColour(Blockly.Blocks.arduino_io.HUE);
+    this.setTooltip(Blockly.Msg.ARDUINO_INOUT_ANGLE_TOOLTIP);
+	this.setHelpUrl(Blockly.Msg.ARDUINO_INOUT_ANGLE_HELPURL);
   }
 };
 

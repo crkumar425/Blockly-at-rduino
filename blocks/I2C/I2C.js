@@ -140,3 +140,134 @@ Blockly.Blocks.I2C_scan = {
     this.setHelpUrl(Blockly.Msg.I2C_SCAN_HELPURL);
   }
 };
+
+
+
+///////////////////////////////////////////////////
+
+Blockly.Blocks.I2C_init_HW = {
+	init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.I2C_INIT_HW_TITRE);  
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(Blockly.Blocks.I2C.HUE);
+    this.setTooltip(Blockly.Msg.I2C_INIT_HW_TOOLTIP); 
+    this.setHelpUrl(Blockly.Msg.I2C_INIT_HW_HELPURL);
+	this.setInputsInline(false);
+  }
+};
+
+Blockly.Blocks.I2C_stop_HW = {
+	init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.I2C_STOP_HW_TITRE);  
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(Blockly.Blocks.I2C.HUE);
+    this.setTooltip(Blockly.Msg.I2C_STOP_HW_TOOLTIP); 
+    this.setHelpUrl(Blockly.Msg.I2C_STOP_HW_HELPURL);
+	this.setInputsInline(false);
+  }
+};
+
+Blockly.Blocks.I2C_restart_HW = {
+	init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.I2C_RESTART_HW_TITRE);  
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(Blockly.Blocks.I2C.HUE);
+    this.setTooltip(Blockly.Msg.I2C_RESTART_HW_TOOLTIP); 
+    this.setHelpUrl(Blockly.Msg.I2C_RESTART_HW_HELPURL);
+	this.setInputsInline(false);
+  }
+};
+
+Blockly.Blocks.I2C_write_HW = {
+	init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.I2C_WRITE_HW_TEXT);  
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.I2C_WRITE_HW_DATA)
+        .appendField(new Blockly.FieldDropdown(Blockly.Msg.I2C_WRITE_HW_FIELDDROPDOWN), "Format")
+        .appendField(new Blockly.FieldTextInput("00"), "data1");
+   	this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+	this.setColour(Blockly.Blocks.I2C.HUE);
+    this.setTooltip(Blockly.Msg.I2C_WRITE_HW_TOOLTIP); 
+    this.setHelpUrl(Blockly.Msg.I2C_WRITE_HW_HELPURL);
+	this.setInputsInline(false);
+  }
+};
+
+Blockly.Blocks.I2C_start_HW = {
+	init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.I2C_START_HW_TEXT);  
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.I2C_START_HW_DATA)
+        .appendField(new Blockly.FieldDropdown(Blockly.Msg.I2C_START_HW_FIELDDROPDOWN), "Format")
+        .appendField(new Blockly.FieldTextInput("00"), "data1");
+   	this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+	this.setColour(Blockly.Blocks.I2C.HUE);
+    this.setTooltip(Blockly.Msg.I2C_START_HW_TOOLTIP); 
+    this.setHelpUrl(Blockly.Msg.I2C_START_HW_HELPURL);
+	this.setInputsInline(false);
+  }
+};
+
+Blockly.Blocks.I2C_request_HW = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.I2C_REQUEST_HW_TEXT);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.I2C_REQUEST_HW_DATA)
+        .appendField(new Blockly.FieldDropdown(Blockly.Msg.I2C_REQUEST_HW_FIELDDROPDOWN), "Format")
+        .appendField(new Blockly.FieldTextInput("00"), "address");
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.I2C_REQUEST_HW_NB_BYTES)
+        .appendField(new Blockly.FieldNumber(1), "nb_bytes");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(Blockly.Blocks.I2C.HUE);
+ this.setTooltip(Blockly.Msg.I2C_REQUEST_HW_TOOLTIP);
+ this.setHelpUrl(Blockly.Msg.I2C_REQUEST_HW_HELPURL);
+  }
+};
+    
+    
+Blockly.Blocks.I2C_available_HW = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.I2C_AVAILABLE_HW_TITRE);
+    this.setOutput(true, null);
+    this.setColour(Blockly.Blocks.I2C.HUE);
+ this.setTooltip(Blockly.Msg.I2C_AVAILABLE_HW_TOOLTIP);
+ this.setHelpUrl(Blockly.Msg.I2C_AVAILABLE_HW_HELPURL);
+  }
+};
+
+
+Blockly.Blocks.I2C_data_HW = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.I2C_DATA_HW_TITRE);
+    this.setOutput(true, null);
+    this.setColour(Blockly.Blocks.I2C.HUE);
+ this.setTooltip(Blockly.Msg.I2C_DATA_HW_TOOLTIP);
+ this.setHelpUrl(Blockly.Msg.I2C_DATA_HW_HELPURL);
+  }
+};
+
+
+
+
+
+
+
+
+
+
+

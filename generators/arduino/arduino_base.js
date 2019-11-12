@@ -69,10 +69,12 @@ Blockly.Arduino.base_define_bloc = function () {
     if (Blockly.Arduino.INFINITE_LOOP_TRAP) {
         branch = Blockly.Arduino.INFINITE_LOOP_TRAP.replace(/%1/g, '\'' + this.id + '\'') + branch;
     }
-    var code = //'{\n' +
-            branch;// + '\n}\n';
     var setup_key = Blockly.Arduino.variableDB_.getDistinctName('base_setup', Blockly.Variables.NAME_TYPE);
-    Blockly.Arduino.definitions_[setup_key] = code;
+    Blockly.Arduino.variables_[setup_key] = branch;
+	
+    // branch = Blockly.Arduino.scrub_(block, branch);
+    // Blockly.Arduino.variables_[setup_key] = branch;
+	
     return "";
 };
 
@@ -170,15 +172,19 @@ Blockly.Arduino.inout_buildin_led = function() {
   var code = 'digitalWrite(13, ' + dropdown_stat + ');\n';
   return code;
 };
-// g�n�re #include < text_file .h>
+// génére #include < text_file .h>
 Blockly.Arduino['biblio_include'] = function() {
   var text_file = this.getFieldValue('File');
   var funcInclude = text_file+'.h';
   Blockly.Arduino.includes_[funcInclude] = '#include <'+text_file+'.h>';
   return "";
 };
-
-
+// génére #include "text_file .h"
+Blockly.Arduino.include_file = function(block) {
+  var text_file = this.getFieldValue('File2');
+  Blockly.Arduino.includes_["File_include"] = '#include "'+text_file+'.h"';
+  return "";
+};
 //@JP Fontaine 02092017
 Blockly.Arduino.base_toggle = function(block) {
     var dropdown_pin = Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
